@@ -7,13 +7,16 @@ public class Flock : MonoBehaviour
 
     public FlockManager myManager;
 
-    private float speed;
+    public float speed;
     private bool turning = false;
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         speed = Random.Range(myManager.minSpeed, myManager.maxSpeed);
+
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -102,5 +105,21 @@ public class Flock : MonoBehaviour
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), myManager.rotationSpeed * Time.deltaTime);
             }
         }
+    }
+
+    public void accelerateSwim()
+    {
+        anim.SetFloat("swimSpeed", 3f);
+    }
+
+    public void decelerateSwim()
+    {
+        anim.SetFloat("swimSpeed", 1f);
+    }
+
+    public void fleeBehaviour(FleeTrigger fleeTrigger)
+    {
+        Vector3 lookBack = transform.position - fleeTrigger.transform.position;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookBack), myManager.rotationSpeed * 3f * Time.deltaTime);
     }
 }
