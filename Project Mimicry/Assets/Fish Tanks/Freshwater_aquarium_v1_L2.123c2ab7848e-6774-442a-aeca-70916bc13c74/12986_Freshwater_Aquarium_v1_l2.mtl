@@ -1,0 +1,126 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 11.01.2012 14:36:55
+
+newmtl 12986_Freshwater_Aquarium_Props_Rubber_01
+	Ns 30.0000
+	Ni 1.5000
+	d 0.5000
+	Tr 0.5000
+	Tf 0.5000 0.5000 0.5000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3690 0.3690 0.3690
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 12986_Freshwater_aquarium_Props1_diff.jpg
+	map_Kd 12986_Freshwater_aquarium_Props1_diff.jpg
+
+newmtl 12986_Freshwater_Aquarium_Glass
+	Ns 10.0000
+	Ni 1.5000
+	d 0.1000
+	Tr 0.9000
+	Tf 0.1000 0.1000 0.1000 
+	illum 2
+	Ka 0.0667 0.2118 0.2588
+	Kd 0.0667 0.2118 0.2588
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+
+newmtl 12986_Freshwater_Aquarium_Plant1
+	Ns 40.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.1800 0.1800 0.1800
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 12986_Freshwater_Aquarium_Plant1.jpg
+	map_Kd 12986_Freshwater_Aquarium_Plant1.jpg
+
+newmtl 12986_Freshwater_Aquarium_Props2
+	Ns 25.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4410 0.4410 0.4410
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 12986_Freshwater_aquarium_Props2_diff.jpg
+	map_Kd 12986_Freshwater_aquarium_Props2_diff.jpg
+
+newmtl 12986_Freshwater_Aquarium_Props_Plastic
+	Ns 30.0000
+	Ni 1.5000
+	d 0.2500
+	Tr 0.7500
+	Tf 0.2500 0.2500 0.2500 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.5400 0.5400 0.5400
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 12986_Freshwater_aquarium_Props1_diff.jpg
+	map_Kd 12986_Freshwater_aquarium_Props1_diff.jpg
+
+newmtl 12986_Freshwater_Aquarium_Plant2
+	Ns 40.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.1800 0.1800 0.1800
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 12986_Freshwater_Aquarium_Plant2.jpg
+	map_Kd 12986_Freshwater_Aquarium_Plant2.jpg
+
+newmtl 12986_Freshwater_Aquarium_Props_Rubber_02
+	Ns 30.0000
+	Ni 1.5000
+	d 0.8500
+	Tr 0.1500
+	Tf 0.8500 0.8500 0.8500 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3690 0.3690 0.3690
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 12986_Freshwater_aquarium_Props1_diff.jpg
+	map_Kd 12986_Freshwater_aquarium_Props1_diff.jpg
+
+newmtl 12986_Freshwater_Aquarium_Props1
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.3690 0.3690 0.3690
+	Ke 1.0000 1.0000 1.0000
+	map_Ka 12986_Freshwater_aquarium_Props1_diff.jpg
+	map_Kd 12986_Freshwater_aquarium_Props1_diff.jpg
+
+newmtl 12986_Freshwater_Aquarium_Main
+	Ns 25.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 12986_Freshwater_Aquarium_Main.jpg
+	map_Kd 12986_Freshwater_Aquarium_Main.jpg
