@@ -10,8 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float acceleration;
     [SerializeField] float deceleration;
 
-    float animatorSpeed = 0f;
-    float moveSpeed = 0f;
+    public float animatorSpeed = 0f;
+    public float moveSpeed = 0f;
 
     Animator anim;
 
