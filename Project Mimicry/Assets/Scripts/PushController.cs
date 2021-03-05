@@ -8,18 +8,22 @@ public class PushController : MonoBehaviour
     Vector3 offset = new Vector3(0f, 1f, 0f);
     RaycastHit hit;
 
-    float timer = 0f;
-    [SerializeField] float timeToPush = 0.5f;
-    bool isPushing = false;
+    //float timer = 0f;
+    //[SerializeField] float timeToPush = 0.5f;
+
+    bool cubeMoving = false;
+    //bool isPushing = false;
 
     PlayerController playerControl;
 
     GameObject cubeToPush;
+    Vector3 cubeToPushPos;
     Vector3 directionToPush;
 
     [SerializeField] float interactRange;
     [SerializeField] LayerMask layerMask;
     [SerializeField] float pushDistance;
+    [SerializeField] float lerpSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -31,15 +35,17 @@ public class PushController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isPushing)
+        if (!cubeMoving)
         {
             checkPushing();
         }
         else
         {
+            //checkTimer();
             pushObject(cubeToPush);
-            checkTimer();
         }
+
+
     }
 
     private void checkPushing()
@@ -51,16 +57,20 @@ public class PushController : MonoBehaviour
             if (Vector3.Dot(transform.forward, -hit.normal) > 0.98f)
             {
                 //Debug.DrawRay(transform.position + offset, vector.normalized * interactRange, Color.green);
-                isPushing = true;
+                //isPushing = true;
 
                 playerControl.animatorSpeed = 0f;
                 playerControl.moveSpeed = 0f;
                 playerControl.enabled = false;
 
                 cubeToPush = hit.collider.gameObject;
+                cubeToPushPos = cubeToPush.transform.position;
+
                 directionToPush = -hit.normal;
 
-                anim.SetBool("isPushing", true);
+                anim.SetTrigger("isPushing");
+
+                cubeMoving = true;
             }
         }
         else
@@ -71,10 +81,21 @@ public class PushController : MonoBehaviour
 
     private void pushObject(GameObject cubeToPush)
     {
-        cubeToPush.transform.Translate(directionToPush * pushDistance * Time.deltaTime, Space.World);
-        //cubeToPush.transform.position = Vector3.Lerp(cubeToPush.transform.position, directionToPush * pushDistance + offset, 0.05f);
+        //cubeToPush.transform.Translate(directionToPush * pushDistance * Time.deltaTime, Space.World); 
+        if(Vector3.Distance(cubeToPush.transform.position, directionToPush * pushDistance + cubeToPushPos) < 0.02f)
+        {
+            cubeToPush.transform.position = directionToPush * pushDistance + cubeToPushPos;
+            cubeMoving = false;
+            playerControl.enabled = true;
+            //anim.SetBool("isPushing", false);
+        }
+        else
+        {
+            cubeToPush.transform.position = Vector3.Lerp(cubeToPush.transform.position, directionToPush * pushDistance + cubeToPushPos, lerpSpeed * Time.deltaTime);
+        }
     }
 
+    /*
     private void checkTimer()
     {
         timer += Time.deltaTime;
@@ -86,4 +107,5 @@ public class PushController : MonoBehaviour
             anim.SetBool("isPushing", false);
         }
     }
+    */
 }
