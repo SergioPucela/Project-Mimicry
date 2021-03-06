@@ -24,11 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
 
-        forward = Camera.main.transform.forward;
-        forward.y = 0;
-        forward = Vector3.Normalize(forward);
-
-        right = Quaternion.Euler(new Vector3(0f, 90f, 0f)) * forward;
+        calculateInputFromCamera();
     }
 
     // Update is called once per frame
@@ -81,5 +77,14 @@ public class PlayerController : MonoBehaviour
                 animatorSpeed = moveSpeed;
             }
         }
+    }
+
+    public void calculateInputFromCamera()
+    {
+        forward = Camera.main.transform.forward;
+        forward.y = 0;
+        forward = Vector3.Normalize(forward);
+
+        right = Quaternion.Euler(new Vector3(0f, 90f, 0f)) * forward;
     }
 }

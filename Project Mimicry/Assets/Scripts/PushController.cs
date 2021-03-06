@@ -8,11 +8,7 @@ public class PushController : MonoBehaviour
     Vector3 offset = new Vector3(0f, 1f, 0f);
     RaycastHit hit;
 
-    //float timer = 0f;
-    //[SerializeField] float timeToPush = 0.5f;
-
     bool cubeMoving = false;
-    //bool isPushing = false;
 
     PlayerController playerControl;
 
@@ -41,11 +37,18 @@ public class PushController : MonoBehaviour
         }
         else
         {
-            //checkTimer();
             pushObject(cubeToPush);
         }
 
-
+        //Fixes some animation issues
+        if(anim.GetBool("isPushing") && !(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)))
+        {
+            anim.SetBool("isWalking", false);
+        }
+        else if(anim.GetBool("isPushing"))
+        {
+            anim.SetBool("isWalking", true);
+        }
     }
 
     private void checkPushing()
@@ -57,7 +60,6 @@ public class PushController : MonoBehaviour
             if (Vector3.Dot(transform.forward, -hit.normal) > 0.98f)
             {
                 //Debug.DrawRay(transform.position + offset, vector.normalized * interactRange, Color.green);
-                //isPushing = true;
 
                 playerControl.animatorSpeed = 0f;
                 playerControl.moveSpeed = 0f;
@@ -68,9 +70,7 @@ public class PushController : MonoBehaviour
 
                 directionToPush = -hit.normal;
 
-                anim.SetTrigger("isPushing");
-
-                cubeMoving = true;
+                anim.SetBool("isPushing", true);
             }
         }
         else
@@ -81,13 +81,9 @@ public class PushController : MonoBehaviour
 
     private void pushObject(GameObject cubeToPush)
     {
-        //cubeToPush.transform.Translate(directionToPush * pushDistance * Time.deltaTime, Space.World); 
         if(Vector3.Distance(cubeToPush.transform.position, directionToPush * pushDistance + cubeToPushPos) < 0.02f)
         {
             cubeToPush.transform.position = directionToPush * pushDistance + cubeToPushPos;
-            cubeMoving = false;
-            playerControl.enabled = true;
-            //anim.SetBool("isPushing", false);
         }
         else
         {
@@ -95,17 +91,19 @@ public class PushController : MonoBehaviour
         }
     }
 
-    /*
-    private void checkTimer()
+    public void startPushObjectAnim()
     {
-        timer += Time.deltaTime;
-        if (timer > timeToPush)
-        {
-            timer = 0f;
-            isPushing = false;
-            playerControl.enabled = true;
-            anim.SetBool("isPushing", false);
-        }
+        cubeMoving = true;
     }
-    */
+
+    public void stopPushObjectAnim()
+    {
+        cubeMoving = false;
+
+        playerControl.enabled = true;
+        playerControl.animatorSpeed = 0f;
+        playerControl.moveSpeed = 0f;
+
+        anim.SetBool("isPushing", false);
+    }
 }
