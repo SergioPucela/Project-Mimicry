@@ -16,8 +16,9 @@ public class PushController : MonoBehaviour
     Vector3 cubeToPushPos;
     Vector3 directionToPush;
 
-    [SerializeField] float interactRange;
     [SerializeField] LayerMask layerMask;
+    [SerializeField] LayerMask obstaclesLayerMask;
+    [SerializeField] float interactRange;
     [SerializeField] float pushDistance;
     [SerializeField] float lerpSpeed;
 
@@ -54,23 +55,26 @@ public class PushController : MonoBehaviour
     private void checkPushing()
     {
         //Vector3 vector = (transform.position + offset + transform.forward) - (transform.position + offset);
-        if (Physics.Raycast(transform.position + offset, transform.forward, out hit, interactRange, layerMask))
+        if (Physics.Raycast(transform.position + offset, transform.forward, out hit, interactRange, layerMask)) //El objeto que quiero empujar es PushableObject?
         {
             //Debug.DrawRay(transform.position + offset, vector.normalized * interactRange, Color.yellow);
-            if (Vector3.Dot(transform.forward, -hit.normal) > 0.98f)
+            if (Vector3.Dot(transform.forward, -hit.normal) > 0.98f) //Estoy mirando al PushableObject?
             {
                 //Debug.DrawRay(transform.position + offset, vector.normalized * interactRange, Color.green);
-
-                playerControl.animatorSpeed = 0f;
-                playerControl.moveSpeed = 0f;
-                playerControl.enabled = false;
 
                 cubeToPush = hit.collider.gameObject;
                 cubeToPushPos = cubeToPush.transform.position;
 
                 directionToPush = -hit.normal;
 
-                anim.SetBool("isPushing", true);
+                if (Physics.OverlapSphere(directionToPush * pushDistance + cubeToPushPos, 0.5f, obstaclesLayerMask).Length == 0) //No hay nada detrás del PushableObject que me impida empujarlo?
+                {
+                    playerControl.animatorSpeed = 0f;
+                    playerControl.moveSpeed = 0f;
+                    playerControl.enabled = false;
+
+                    anim.SetBool("isPushing", true);
+                }
             }
         }
         else
