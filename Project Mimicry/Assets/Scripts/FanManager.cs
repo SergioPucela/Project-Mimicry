@@ -13,10 +13,16 @@ public class FanManager : MonoBehaviour
     [SerializeField] GameObject fanCollider;
     private Vector3 triggerPos;
 
+    //Debug
+    Renderer myRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
         triggerPos = GetComponentInChildren<FanTrigger>().transform.position;
+
+        //Debug
+        myRenderer = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -29,6 +35,16 @@ public class FanManager : MonoBehaviour
         else if(!fanIsON && fanCollider.activeSelf == true)
         {
             fanCollider.SetActive(false);
+        }
+
+        //Debug
+        if (fanIsON)
+        {
+            myRenderer.material.SetColor("_Color", Color.red);
+        }
+        else
+        {
+            myRenderer.material.SetColor("_Color", Color.green);
         }
     }
 
