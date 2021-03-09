@@ -6,6 +6,7 @@ public class LaserDisplay : MonoBehaviour
 {
     [SerializeField] LayerMask layerMask;
     [SerializeField] float viewRange;
+    [SerializeField]
     public bool isReflecting;
 
     private LaserCube parentCube;
@@ -31,7 +32,17 @@ public class LaserDisplay : MonoBehaviour
             {
                 isReflecting = false;
                 parentCube.isReflecting = false;
-                print("YA TA");
+
+            }
+            else if (hit.transform.gameObject.CompareTag("DisplayLaser") && isReflecting)
+            {
+                LaserCube hitParentCube = hit.transform.gameObject.GetComponent<LaserDisplay>().parentCube;
+
+                if (!hitParentCube.isReflecting && !hitParentCube.isCubeIgnited)
+                {
+                    isReflecting = false;
+                    parentCube.isReflecting = false;
+                }
             }
         }
     }

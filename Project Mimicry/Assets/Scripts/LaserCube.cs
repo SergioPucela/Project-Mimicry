@@ -114,7 +114,6 @@ public class LaserCube : MonoBehaviour
 
     private void createNewLaser(Vector3 initPos, Vector3 endPos, Quaternion rotation)
     {
-        print(objectPooler);
         currentLaser = objectPooler.SpawnFromPool("Laser", initPos, rotation);
         mLineRenderer = currentLaser.GetComponent<LineRenderer>();
 
