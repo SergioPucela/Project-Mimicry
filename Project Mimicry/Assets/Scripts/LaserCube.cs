@@ -5,9 +5,9 @@ using UnityEngine;
 public class LaserCube : MonoBehaviour
 {
     public bool isCubeIgnited;
+    public bool isReflecting;
 
     [SerializeField] float updateFrequency;
-    [SerializeField] LineRenderer LaserPrefab;
     [SerializeField] float laserRange;
     [SerializeField] LayerMask layerMask;
 
@@ -22,7 +22,7 @@ public class LaserCube : MonoBehaviour
     private LineRenderer mLineRenderer;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         objectPooler = ObjectPooler.Instance;
     }
@@ -40,6 +40,19 @@ public class LaserCube : MonoBehaviour
                     lasers.Dequeue().SetActive(false);
                 }
                 generateAllLasers();
+            }
+            timer += Time.fixedDeltaTime;
+        }
+        else if (isReflecting)
+        {
+            if (timer >= updateFrequency)
+            {
+                timer = 0f;
+                while (lasers.Count != 0)
+                {
+                    lasers.Dequeue().SetActive(false);
+                }
+                reflectLasers();
             }
             timer += Time.fixedDeltaTime;
         }
@@ -65,6 +78,7 @@ public class LaserCube : MonoBehaviour
                 {
                     LaserDisplay reflectLaser = hit.transform.gameObject.GetComponent<LaserDisplay>();
                     reflectLaser.isReflecting = true;
+                    reflectLaser.GetComponentInParent<LaserCube>().isReflecting = true;
                 }
             }
 
@@ -76,12 +90,11 @@ public class LaserCube : MonoBehaviour
         }
     }
 
-    /*
-    public void reflectLasers(GameObject laserToAvoid)
+    public void reflectLasers()
     {
         foreach (GameObject laserDisplay in LaserOrigins)
         {
-            if(laserDisplay != laserToAvoid)
+            if(!laserDisplay.GetComponent<LaserDisplay>().isReflecting)
             {
                 RaycastHit hit;
                 if (Physics.Raycast(laserDisplay.transform.position, laserDisplay.transform.forward, out hit, laserRange, layerMask))
@@ -92,14 +105,16 @@ public class LaserCube : MonoBehaviour
                     {
                         LaserDisplay reflectLaser = hit.transform.gameObject.GetComponent<LaserDisplay>();
                         reflectLaser.isReflecting = true;
+                        reflectLaser.GetComponentInParent<LaserCube>().isReflecting = true;
                     }
                 }
             }
         }
-    }*/
+    }
 
     private void createNewLaser(Vector3 initPos, Vector3 endPos, Quaternion rotation)
     {
+        print(objectPooler);
         currentLaser = objectPooler.SpawnFromPool("Laser", initPos, rotation);
         mLineRenderer = currentLaser.GetComponent<LineRenderer>();
 

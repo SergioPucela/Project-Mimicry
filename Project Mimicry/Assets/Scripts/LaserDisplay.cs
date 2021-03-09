@@ -19,13 +19,7 @@ public class LaserDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
         checkReflect();
-        if (isReflecting)
-        {
-            parentCube.reflectLasers(this.gameObject);
-        }
-        */
     }
 
     private void checkReflect()
@@ -33,10 +27,11 @@ public class LaserDisplay : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(transform.position, transform.forward, out hit, viewRange, layerMask) && isReflecting)
         {
-            if (!hit.transform.gameObject.CompareTag("DisplayLaser"))
+            if (!hit.transform.gameObject.CompareTag("DisplayLaser") && isReflecting)
             {
                 isReflecting = false;
-                print("OHAYOO");
+                parentCube.isReflecting = false;
+                print("YA TA");
             }
         }
     }
