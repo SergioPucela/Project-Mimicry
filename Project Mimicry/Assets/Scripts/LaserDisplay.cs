@@ -6,7 +6,6 @@ public class LaserDisplay : MonoBehaviour
 {
     [SerializeField] LayerMask layerMask;
     [SerializeField] float viewRange;
-    [SerializeField]
     public bool isReflecting;
 
     private LaserCube parentCube;
@@ -28,13 +27,13 @@ public class LaserDisplay : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(transform.position, transform.forward, out hit, viewRange, layerMask) && isReflecting)
         {
-            if (!hit.transform.gameObject.CompareTag("DisplayLaser") && isReflecting)
+            if (!hit.transform.gameObject.CompareTag("DisplayLaser"))
             {
                 isReflecting = false;
                 parentCube.isReflecting = false;
 
             }
-            else if (hit.transform.gameObject.CompareTag("DisplayLaser") && isReflecting)
+            else if (hit.transform.gameObject.CompareTag("DisplayLaser"))
             {
                 LaserCube hitParentCube = hit.transform.gameObject.GetComponent<LaserDisplay>().parentCube;
 
