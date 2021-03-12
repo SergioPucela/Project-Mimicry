@@ -617,7 +617,7 @@ MonoBehaviour:
     type: 3}
   numFish: 25
   allFishes: []
-  swimLimits: {x: 2.5, y: 0.85, z: 0.5}
+  swimLimits: {x: 2.25, y: 0.85, z: 0.5}
   goalPos: {x: 0, y: 0, z: 0}
   minSpeed: 0.35
   maxSpeed: 1.75
