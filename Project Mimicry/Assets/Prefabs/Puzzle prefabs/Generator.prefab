@@ -230,7 +230,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abbf9dce66f912e46a3aa4bd2572b361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fansToIgnite:
-  - {fileID: 0}
-  - {fileID: 0}
+  fansToIgnite: []
   laserCube: {fileID: 0}

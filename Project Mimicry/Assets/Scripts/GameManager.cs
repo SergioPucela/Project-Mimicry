@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+        [SerializeField] PlayerController playerControl;
+
     [SerializeField] List<LaserCube> winConditions = new List<LaserCube>();
-    [SerializeField] PlayerController playerControl;
+    [SerializeField] List<LaserCube> loseConditions = new List<LaserCube>();
 
     // Start is called before the first frame update
     void Awake()
@@ -28,6 +30,12 @@ public class GameManager : MonoBehaviour
         {
             if (!cube.isReflecting) return false;
         }
+
+        foreach (LaserCube cube in loseConditions)
+        {
+            if (cube.isReflecting) return false;
+        }
+
         return true;
     }
 
