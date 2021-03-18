@@ -48,13 +48,10 @@ public class PlayerController : MonoBehaviour
             animatorSpeed = 0f;
             anim.SetBool("isWalking", false);
         }
-        //print("Move Speed: " + moveSpeed + "// Dec * Time = " + deceleration * Time.deltaTime);
     }
 
     void Move()
     {
-        //Vector3 direction = new Vector3(Input.GetAxis("HorizontalKey"), 0f, Input.GetAxis("VerticalKey"));
-
         Accelerate();
 
         Vector3 rightMovement = right * Input.GetAxis("Horizontal");

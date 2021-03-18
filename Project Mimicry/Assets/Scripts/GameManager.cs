@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-        [SerializeField] PlayerController playerControl;
+    [SerializeField] PlayerController playerControl;
 
     [SerializeField] List<LaserCube> winConditions = new List<LaserCube>();
     [SerializeField] List<LaserCube> loseConditions = new List<LaserCube>();

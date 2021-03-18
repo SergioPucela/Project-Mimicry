@@ -9,6 +9,7 @@ public class ArmController : MonoBehaviour
     [SerializeField] float clickRange;
     [SerializeField] GameObject prefabTest;
     [SerializeField] LayerMask layerMask;
+    [SerializeField] bool ending;
 
     // Start is called before the first frame update
     void Start()
@@ -26,12 +27,20 @@ public class ArmController : MonoBehaviour
 
         if (Input.GetButtonDown("Click")){
 
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if(Physics.Raycast(ray, out hit, layerMask))
+            if (!ending)
             {
-                Instantiate(prefabTest, hit.point, Quaternion.identity);
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hit, layerMask))
+                {
+                    Instantiate(prefabTest, hit.point, Quaternion.identity);
+                    anim.SetBool("click", true);
+                }
+            }
+            else
+            {
+                Instantiate(prefabTest, new Vector3(0f, 0f, 0f), Quaternion.identity);
                 anim.SetBool("click", true);
             }
         }

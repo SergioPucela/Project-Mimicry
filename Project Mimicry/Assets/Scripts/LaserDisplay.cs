@@ -31,9 +31,8 @@ public class LaserDisplay : MonoBehaviour
             {
                 isReflecting = false;
                 parentCube.isReflecting = false;
-
             }
-            else if (hit.transform.gameObject.CompareTag("DisplayLaser"))
+            else
             {
                 LaserCube hitParentCube = hit.transform.gameObject.GetComponent<LaserDisplay>().parentCube;
 

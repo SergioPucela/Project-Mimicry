@@ -24,8 +24,6 @@ public class FleeTrigger : MonoBehaviour
             StartCoroutine(flee(fish));
             fish.fleeBehaviour(this);
         }
-
-        print(fishesInRange.Count);
     }
 
     private IEnumerator flee(Flock fish)

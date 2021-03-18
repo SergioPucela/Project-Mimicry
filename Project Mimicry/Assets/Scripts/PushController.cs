@@ -38,7 +38,7 @@ public class PushController : MonoBehaviour
         }
         else
         {
-            pushObject(cubeToPush);
+            pushObject();
         }
 
         //Fixes some animation issues
@@ -54,14 +54,10 @@ public class PushController : MonoBehaviour
 
     private void checkPushing()
     {
-        //Vector3 vector = (transform.position + offset + transform.forward) - (transform.position + offset);
         if (Physics.Raycast(transform.position + offset, transform.forward, out hit, interactRange, layerMask)) //El objeto que quiero empujar es PushableObject?
         {
-            //Debug.DrawRay(transform.position + offset, vector.normalized * interactRange, Color.yellow);
             if (Vector3.Dot(transform.forward, -hit.normal) > 0.98f) //Estoy mirando al PushableObject?
             {
-                //Debug.DrawRay(transform.position + offset, vector.normalized * interactRange, Color.green);
-
                 cubeToPush = hit.collider.gameObject;
                 cubeToPushPos = cubeToPush.transform.position;
 
@@ -77,13 +73,9 @@ public class PushController : MonoBehaviour
                 }
             }
         }
-        else
-        {
-            //Debug.DrawRay(transform.position + offset, vector.normalized * interactRange, Color.red);
-        }
     }
 
-    private void pushObject(GameObject cubeToPush)
+    private void pushObject()
     {
         if(Vector3.Distance(cubeToPush.transform.position, directionToPush * pushDistance + cubeToPushPos) < 0.02f)
         {
