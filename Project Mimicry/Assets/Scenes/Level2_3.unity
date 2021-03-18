@@ -10706,6 +10706,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2245801205560152535, guid: 0b765be554693ea4c84f79b69285c982,
         type: 3}
+      propertyPath: fansToIgnite.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2245801205560152535, guid: 0b765be554693ea4c84f79b69285c982,
+        type: 3}
       propertyPath: fansToIgnite.Array.data[0]
       value: 
       objectReference: {fileID: 1789072522}
