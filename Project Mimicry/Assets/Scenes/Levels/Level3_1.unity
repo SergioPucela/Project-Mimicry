@@ -6403,10 +6403,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 3072
-  LaserOrigins:
-  - {fileID: 8962712011887657609}
-  - {fileID: 8962712011976266102}
-  - {fileID: 389799568}
+  LaserOrigins: []
 --- !u!1 &8962712012863436693
 GameObject:
   m_ObjectHideFlags: 0
@@ -6446,8 +6443,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 3072
-  LaserOrigins:
-  - {fileID: 8962712011666320384}
+  LaserOrigins: []
 --- !u!65 &8962712012863436695
 BoxCollider:
   m_ObjectHideFlags: 0

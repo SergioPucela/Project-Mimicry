@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class LaserCube : MonoBehaviour
@@ -13,7 +14,7 @@ public class LaserCube : MonoBehaviour
 
     private float timer = 0f;
 
-    public List<GameObject> LaserOrigins = new List<GameObject>();
+    [HideInInspector] public List<GameObject> LaserOrigins;
 
     private Queue<GameObject> lasers = new Queue<GameObject>();
 
@@ -25,6 +26,11 @@ public class LaserCube : MonoBehaviour
     void Start()
     {
         objectPooler = ObjectPooler.Instance;
+
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            LaserOrigins.Add(transform.GetChild(i).gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -72,14 +78,7 @@ public class LaserCube : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(laserDisplay.transform.position, laserDisplay.transform.forward, out hit, laserRange, layerMask))
             {
-                createNewLaser(laserDisplay.transform.position, hit.point, laserDisplay.transform.rotation);
-
-                if (hit.transform.gameObject.CompareTag("DisplayLaser"))
-                {
-                    LaserDisplay reflectLaser = hit.transform.gameObject.GetComponent<LaserDisplay>();
-                    reflectLaser.isReflecting = true;
-                    reflectLaser.GetComponentInParent<LaserCube>().isReflecting = true;
-                }
+                generateLaser(laserDisplay, hit);
             }
 
             /*
@@ -90,7 +89,7 @@ public class LaserCube : MonoBehaviour
         }
     }
 
-    public void reflectLasers()
+    private void reflectLasers()
     {
         foreach (GameObject laserDisplay in LaserOrigins)
         {
@@ -99,16 +98,21 @@ public class LaserCube : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(laserDisplay.transform.position, laserDisplay.transform.forward, out hit, laserRange, layerMask))
                 {
-                    createNewLaser(laserDisplay.transform.position, hit.point, laserDisplay.transform.rotation);
-
-                    if (hit.transform.gameObject.CompareTag("DisplayLaser"))
-                    {
-                        LaserDisplay reflectLaser = hit.transform.gameObject.GetComponent<LaserDisplay>();
-                        reflectLaser.isReflecting = true;
-                        reflectLaser.GetComponentInParent<LaserCube>().isReflecting = true;
-                    }
+                    generateLaser(laserDisplay, hit);
                 }
             }
+        }
+    }
+
+    private void generateLaser(GameObject laserDisplay, RaycastHit hit)
+    {
+        createNewLaser(laserDisplay.transform.position, hit.point, laserDisplay.transform.rotation);
+
+        if (hit.transform.gameObject.CompareTag("DisplayLaser"))
+        {
+            LaserDisplay reflectLaser = hit.transform.gameObject.GetComponent<LaserDisplay>();
+            reflectLaser.isReflecting = true;
+            reflectLaser.GetComponentInParent<LaserCube>().isReflecting = true;
         }
     }
 

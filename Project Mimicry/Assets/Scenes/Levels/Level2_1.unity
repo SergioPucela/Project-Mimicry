@@ -6096,8 +6096,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 3072
-  LaserOrigins:
-  - {fileID: 6897350374599183525}
+  LaserOrigins: []
 --- !u!33 &6897350375259690812
 MeshFilter:
   m_ObjectHideFlags: 0

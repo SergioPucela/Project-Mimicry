@@ -337,6 +337,4 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 3072
-  LaserOrigins:
-  - {fileID: 8962712011957487302}
-  - {fileID: 8962712011902440761}
+  LaserOrigins: []

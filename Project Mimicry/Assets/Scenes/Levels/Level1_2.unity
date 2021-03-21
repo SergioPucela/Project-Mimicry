@@ -3804,8 +3804,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 3072
-  LaserOrigins:
-  - {fileID: 1633434198}
+  LaserOrigins: []
 --- !u!65 &1273853557
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6300,8 +6299,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 3072
-  LaserOrigins:
-  - {fileID: 8962712011944848801}
+  LaserOrigins: []
 --- !u!33 &8962712013448934968
 MeshFilter:
   m_ObjectHideFlags: 0

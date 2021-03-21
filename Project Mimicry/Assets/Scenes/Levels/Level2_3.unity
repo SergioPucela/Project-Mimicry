@@ -8413,9 +8413,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 3072
-  LaserOrigins:
-  - {fileID: 450208450}
-  - {fileID: 210438609}
+  LaserOrigins: []
 --- !u!65 &1648531121
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9313,9 +9311,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 3072
-  LaserOrigins:
-  - {fileID: 1467333248}
-  - {fileID: 396634707}
+  LaserOrigins: []
 --- !u!65 &1781772460
 BoxCollider:
   m_ObjectHideFlags: 0

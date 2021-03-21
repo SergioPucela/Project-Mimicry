@@ -6195,10 +6195,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 3072
-  LaserOrigins:
-  - {fileID: 3153347238015781309}
-  - {fileID: 3153347238330882626}
-  - {fileID: 45045216}
+  LaserOrigins: []
 --- !u!1001 &5821714728957708147
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3bfffd42151b96438e7e0447ddd020b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winConditions:
-  - {fileID: 0}
-  - {fileID: 0}
   playerControl: {fileID: 0}
+  winConditions: []
+  loseConditions: []
