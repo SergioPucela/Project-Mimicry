@@ -3257,7 +3257,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872417920}
-  m_LocalRotation: {x: 0.25812164, y: 0.3714188, z: -0.1082967, w: 0.88526446}
+  m_LocalRotation: {x: 0.2581216, y: 0.3714188, z: -0.1082967, w: 0.88526446}
   m_LocalPosition: {x: -11.15, y: 6.04, z: -11.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4932,7 +4932,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207235826}
-  m_LocalRotation: {x: 0.25812164, y: 0.3714188, z: -0.1082967, w: 0.88526446}
+  m_LocalRotation: {x: 0.2581216, y: 0.3714188, z: -0.1082967, w: 0.88526446}
   m_LocalPosition: {x: -11.15, y: 6.04, z: -11.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -8253,7 +8253,7 @@ GameObject:
   - component: {fileID: 1835066969}
   - component: {fileID: 1835066968}
   m_Layer: 11
-  m_Name: StillCube (ignited)
+  m_Name: LaserGenerator
   m_TagString: ObjectObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8310,7 +8310,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7f01714a2f1a37c46a99d12816699aab, type: 2}
+  - {fileID: 2100000, guid: 1fdf7de55e17d72438d3e47654ccf8eb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
