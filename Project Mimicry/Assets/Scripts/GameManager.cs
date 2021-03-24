@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,9 +19,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.R))
+        {
+            print("Reload level");
+            reloadLevel();
+        }
         if (checkWinCons())
         {
             print("YOU WIN!");
+            StartCoroutine("loadNextLevel");
         }
     }
 
@@ -46,5 +53,23 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
 
         playerControl.enabled = true;
+    }
+
+    private IEnumerator loadNextLevel()
+    {
+        yield return new WaitForSeconds(1f);
+        if (SceneManager.GetActiveScene().buildIndex == 8)
+        {
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
+
+    private void reloadLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

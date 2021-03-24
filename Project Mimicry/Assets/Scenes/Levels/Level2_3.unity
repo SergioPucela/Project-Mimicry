@@ -10474,6 +10474,11 @@ PrefabInstance:
       objectReference: {fileID: 1525525184}
     - target: {fileID: 1216600125942040641, guid: 5b792c6ec593a544fa51867b981cad23,
         type: 3}
+      propertyPath: winConditions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216600125942040641, guid: 5b792c6ec593a544fa51867b981cad23,
+        type: 3}
       propertyPath: winConditions.Array.data[0]
       value: 
       objectReference: {fileID: 1497798237}
