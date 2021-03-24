@@ -174,7 +174,7 @@ MonoBehaviour:
   m_VerticalDamping: 0.5
   m_ScreenX: 0.5
   m_ScreenY: 0.5
-  m_DeadZoneWidth: 0.8
+  m_DeadZoneWidth: 0.1
   m_DeadZoneHeight: 0.1
   m_SoftZoneWidth: 0.8
   m_SoftZoneHeight: 0.5
@@ -1154,7 +1154,7 @@ MonoBehaviour:
   m_VerticalDamping: 0.5
   m_ScreenX: 0.5
   m_ScreenY: 0.5
-  m_DeadZoneWidth: 0.8
+  m_DeadZoneWidth: 0.1
   m_DeadZoneHeight: 0.1
   m_SoftZoneWidth: 0.8
   m_SoftZoneHeight: 0.5
@@ -3621,7 +3621,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661222216}
-  m_LocalRotation: {x: 0.033803422, y: 0.9656443, z: -0.1648178, w: 0.19804947}
+  m_LocalRotation: {x: 0.033803426, y: 0.9656443, z: -0.1648178, w: 0.1980495}
   m_LocalPosition: {x: -11.15, y: 6.04, z: 11.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3909,7 +3909,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 756795501}
-  m_LocalRotation: {x: 0.13953137, y: -0.5466429, z: 0.09297063, w: 0.82040787}
+  m_LocalRotation: {x: 0.13953137, y: -0.5466429, z: 0.09297063, w: 0.8204078}
   m_LocalPosition: {x: 11.15, y: 6.04, z: -11.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3969,7 +3969,7 @@ MonoBehaviour:
   m_VerticalDamping: 0.5
   m_ScreenX: 0.5
   m_ScreenY: 0.5
-  m_DeadZoneWidth: 0.8
+  m_DeadZoneWidth: 0.1
   m_DeadZoneHeight: 0.1
   m_SoftZoneWidth: 0.8
   m_SoftZoneHeight: 0.5
@@ -4391,7 +4391,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872417920}
-  m_LocalRotation: {x: 0.25812164, y: 0.37141886, z: -0.10829672, w: 0.88526446}
+  m_LocalRotation: {x: 0.2581216, y: 0.3714188, z: -0.1082967, w: 0.88526446}
   m_LocalPosition: {x: -11.15, y: 6.04, z: -11.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5696,7 +5696,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207235826}
-  m_LocalRotation: {x: 0.25812164, y: 0.37141886, z: -0.10829672, w: 0.88526446}
+  m_LocalRotation: {x: 0.2581216, y: 0.3714188, z: -0.1082967, w: 0.88526446}
   m_LocalPosition: {x: -11.15, y: 6.04, z: -11.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -6626,7 +6626,7 @@ MonoBehaviour:
   m_VerticalDamping: 0.5
   m_ScreenX: 0.5
   m_ScreenY: 0.5
-  m_DeadZoneWidth: 0.8
+  m_DeadZoneWidth: 0.1
   m_DeadZoneHeight: 0.1
   m_SoftZoneWidth: 0.8
   m_SoftZoneHeight: 0.5

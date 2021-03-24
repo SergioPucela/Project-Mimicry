@@ -60,7 +60,8 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         if (SceneManager.GetActiveScene().buildIndex == 8)
         {
-            SceneManager.LoadScene(0);
+            print("GAME ENDED");
+            Application.Quit();
         }
         else
         {

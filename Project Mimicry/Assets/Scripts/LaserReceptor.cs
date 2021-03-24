@@ -5,6 +5,8 @@ using UnityEngine;
 public class LaserReceptor : MonoBehaviour
 {
     [SerializeField] List<LaserCube> cubesToTrigger = new List<LaserCube>();
+    [SerializeField] List<LaserCube> inhibitorCubes = new List<LaserCube>();
+
     private LaserCube parentCube;
 
     //This booleans will make the setCubes function be called just one time (= more efficient)
@@ -22,13 +24,22 @@ public class LaserReceptor : MonoBehaviour
     {
         if (parentCube.isReflecting)
         {
-            if(activated) setCubes(true);
-            deactivated = true;
-            activated = false;
+            if (checkInhibitors())
+            {
+                if (activated) setCubes(true);
+                deactivated = true;
+                activated = false;
+            }
+            else if (deactivated)
+            {
+                setCubes(false);
+                deactivated = false;
+                activated = true;
+            }
         }
         else
         {
-            if(deactivated) setCubes(false);
+            if (deactivated) setCubes(false);
             deactivated = false;
             activated = true;
         }
@@ -40,5 +51,16 @@ public class LaserReceptor : MonoBehaviour
         {
             cube.isCubeIgnited = isIgnited;
         }
+    }
+
+    private bool checkInhibitors()
+    {
+        if (inhibitorCubes.Count <= 0) return true;
+
+        foreach(LaserCube cube in inhibitorCubes)
+        {
+            if (cube.isReflecting) return false;
+        }
+        return true;
     }
 }
