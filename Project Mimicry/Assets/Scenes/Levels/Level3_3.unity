@@ -2227,7 +2227,7 @@ PrefabInstance:
         type: 3}
       propertyPath: cubesToTrigger.Array.data[0]
       value: 
-      objectReference: {fileID: 51862951}
+      objectReference: {fileID: 1771860734}
     - target: {fileID: 7539654859970892008, guid: 89bdb02e00c36994daec2585fa93d5cc,
         type: 3}
       propertyPath: inhibitorCubes.Array.data[0]
@@ -5888,7 +5888,7 @@ PrefabInstance:
     - target: {fileID: 7539654859970892008, guid: 89bdb02e00c36994daec2585fa93d5cc,
         type: 3}
       propertyPath: inhibitorCubes.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7539654859970892008, guid: 89bdb02e00c36994daec2585fa93d5cc,
         type: 3}
@@ -5898,6 +5898,11 @@ PrefabInstance:
     - target: {fileID: 7539654859970892008, guid: 89bdb02e00c36994daec2585fa93d5cc,
         type: 3}
       propertyPath: inhibitorCubes.Array.data[0]
+      value: 
+      objectReference: {fileID: 1663289496}
+    - target: {fileID: 7539654859970892008, guid: 89bdb02e00c36994daec2585fa93d5cc,
+        type: 3}
+      propertyPath: inhibitorCubes.Array.data[1]
       value: 
       objectReference: {fileID: 1971889929}
     - target: {fileID: 7539654859970892015, guid: 89bdb02e00c36994daec2585fa93d5cc,
@@ -6255,6 +6260,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1640933439}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1663289496 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7539654859970891795, guid: 89bdb02e00c36994daec2585fa93d5cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 566920920}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5afb525a2678dd43b40fa5846eb749c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1668930738
 PrefabInstance:
   m_ObjectHideFlags: 0
