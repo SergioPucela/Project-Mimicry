@@ -73,4 +73,41 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void LoadLvl1()
+    {
+        SceneManager.LoadScene("Level1_1");
+    }
+    public void LoadLvl2()
+    {
+        SceneManager.LoadScene("Level1_2");
+    }
+    public void LoadLvl3()
+    {
+        SceneManager.LoadScene("Level1_3");
+    }
+    public void LoadLvl4()
+    {
+        SceneManager.LoadScene("Level2_1");
+    }
+    public void LoadLvl5()
+    {
+        SceneManager.LoadScene("Level2_2");
+    }
+    public void LoadLvl6()
+    {
+        SceneManager.LoadScene("Level2_3");
+    }
+    public void LoadLvl7()
+    {
+        SceneManager.LoadScene("Level3_1");
+    }
+    public void LoadLvl8()
+    {
+        SceneManager.LoadScene("Level3_2");
+    }
+    public void LoadLvl9()
+    {
+        SceneManager.LoadScene("Level3_3");
+    }
 }
