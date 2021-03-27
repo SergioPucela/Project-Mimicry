@@ -29,11 +29,11 @@ public class VcamTrigger : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            vcamPrior.enabled = true;
+            vcamPrior.Priority = 10;
 
             foreach(CinemachineVirtualCamera vcam in vcamsNonPrior)
             {
-                vcam.enabled = false;
+                vcam.Priority = 5;
             }
         }
     }
