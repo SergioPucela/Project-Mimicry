@@ -1236,7 +1236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab852c2dcb71a044ad04be104fc5926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 2.5
+  maxSpeed: 2.8
   smoothRotation: 5
   acceleration: 6
   deceleration: 15
@@ -1262,7 +1262,7 @@ MonoBehaviour:
     m_Bits: 11264
   interactRange: 1
   pushDistance: 1.5
-  lerpSpeed: 5
+  lerpSpeed: 6.5
 --- !u!1 &5307041613514364720
 GameObject:
   m_ObjectHideFlags: 0
