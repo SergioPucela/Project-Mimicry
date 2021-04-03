@@ -243,7 +243,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 436389296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.8, y: 0.01, z: -1.79}
+  m_LocalPosition: {x: 3.78, y: 0.01, z: -1.79}
   m_LocalScale: {x: 0.1, y: 1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1268255463}
@@ -1088,12 +1088,18 @@ MonoBehaviour:
   - {fileID: 436389296}
   - {fileID: 680545522}
   checkBox:
-  - {fileID: 2146372211}
-  - {fileID: 226190662}
-  - {fileID: 1189968865}
-  - {fileID: 1172719022}
-  - {fileID: 823791084}
-  - {fileID: 2066540876}
+  - {fileID: 2146372214}
+  - {fileID: 226190665}
+  - {fileID: 1189968868}
+  - {fileID: 1172719025}
+  - {fileID: 823791087}
+  - {fileID: 2066540879}
+  incorrectMat: {fileID: 2100000, guid: bb215318c608f9e49a8b572259640341, type: 2}
+  correctMat: {fileID: 2100000, guid: 90b6425e97513244b831a91e06926ffb, type: 2}
+  neutralMat: {fileID: 2100000, guid: 78245fb2cd489ce4f936436c60a719fe, type: 2}
+  examMaterial: {fileID: 2100000, guid: e5d04fd8ba92d034d800f0cb94fb012f, type: 2}
+  exam: {fileID: 1268255461}
+  projectorLight: {fileID: 660336927}
 --- !u!4 &1042616395
 Transform:
   m_ObjectHideFlags: 0
