@@ -10,6 +10,10 @@ public class MouseLook : MonoBehaviour
     private float xRotation = 0f;
     private float yRotation = 0f;
 
+    private bool canMove;
+
+    [SerializeField] Transform playerBody;
+
     [SerializeField] float xLockAngle = 60f;
     [SerializeField] float yLockAngle = 60f;
 
@@ -18,6 +22,7 @@ public class MouseLook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canMove = playerBody != null;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -33,6 +38,14 @@ public class MouseLook : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -xLockAngle, xLockAngle);
         yRotation = Mathf.Clamp(yRotation, -yLockAngle, yLockAngle);
 
-        transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
+        if (canMove)
+        {
+            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            playerBody.Rotate(Vector3.up * mouseX);
+        }
+        else
+        {
+            transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
+        }
     }
 }

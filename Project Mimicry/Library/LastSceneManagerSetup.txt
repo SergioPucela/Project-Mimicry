@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/ExamProjectorScene.unity
+- path: Assets/Scenes/ScreensScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
