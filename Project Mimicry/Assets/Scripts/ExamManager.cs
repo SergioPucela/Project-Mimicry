@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ExamManager : MonoBehaviour
 {
+    [Header("Bots")]
+    [SerializeField] bool isBot;
+
+    [Header("Lists")]
     [SerializeField] private List<GameObject> arrows = new List<GameObject>();
     [SerializeField] private List<Renderer> checkBox = new List<Renderer>();
 
@@ -14,7 +18,7 @@ public class ExamManager : MonoBehaviour
     [SerializeField] Material examMaterial;
 
     [Header("Exam")]
-    [SerializeField] Renderer exam;
+    [SerializeField] GameObject exam;
 
     [Header("Light")]
     [SerializeField] GameObject projectorLight;
@@ -28,12 +32,15 @@ public class ExamManager : MonoBehaviour
     void Start()
     {      
         nextQuestion(generateRandIndex());
+
+        if (isBot)
+            StartCoroutine("randomAnswer");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (examRunning)
+        if (examRunning && !isBot)
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
@@ -105,6 +112,26 @@ public class ExamManager : MonoBehaviour
         }
     }
 
+    private IEnumerator randomAnswer()
+    {
+        int rand = Random.Range(0, 2);
+
+        if(rand >= 1)
+            checkBox[currentQuestion].material = correctMat;
+        else
+            checkBox[currentQuestion].material = incorrectMat;
+
+        currentQuestion++;
+        nextQuestion(generateRandIndex());
+
+        if (currentQuestion >= checkBox.Count)
+            StartCoroutine("resetExam");
+
+        yield return new WaitForSeconds(1f);
+
+        StartCoroutine("randomAnswer");
+    }
+
     private IEnumerator resetExam()
     {
         foreach (GameObject GO in arrows)
@@ -119,13 +146,13 @@ public class ExamManager : MonoBehaviour
         {
             CB.material = neutralMat;
         }
-        exam.material = neutralMat;
+        exam.SetActive(false);
         lastRandIndex = -1;
         projectorLight.SetActive(false);
 
         yield return new WaitForSeconds(1f);
 
-        exam.material = examMaterial;
+        exam.SetActive(true);
         examRunning = true;
         projectorLight.SetActive(true);
 
