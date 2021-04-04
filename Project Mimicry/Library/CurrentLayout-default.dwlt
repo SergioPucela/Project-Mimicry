@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 7412
+  controlID: 5232
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 433, y: 492}
   m_MaxSize: {x: 14003, y: 14042}
   vertical: 1
-  controlID: 7413
+  controlID: 5263
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -162,10 +162,10 @@ MonoBehaviour:
     y: 0
     width: 1408
     height: 460
-  m_MinSize: {x: 401, y: 221}
-  m_MaxSize: {x: 8001, y: 4021}
+  m_MinSize: {x: 403, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 7414
+  controlID: 5264
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_MinSize: {x: 433, y: 271}
   m_MaxSize: {x: 14003, y: 10021}
   vertical: 0
-  controlID: 7344
+  controlID: 5184
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -455,9 +455,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.34527987, y: -3.587905, z: 3.4094753}
+    m_Target: {x: -8.188599, y: 0.6926837, z: -1.5253534}
     speed: 2
-    m_Value: {x: -0.34527987, y: -3.587905, z: 3.4094753}
+    m_Value: {x: -8.188599, y: 0.6926837, z: -1.5253534}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -503,13 +503,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.19792898, y: 0.049377978, z: -0.0099838115, w: 0.9789282}
+    m_Target: {x: 0.14437936, y: -0.42323685, z: 0.06851879, w: 0.89182234}
     speed: 2
-    m_Value: {x: 0.19645897, y: 0.049392544, z: -0.009909661, w: 0.979217}
+    m_Value: {x: -0.14437936, y: 0.42323688, z: -0.06851879, w: -0.89182234}
   m_Size:
-    m_Target: 11.3530855
+    m_Target: 8.543047
     speed: 2
-    m_Value: 10.864197
+    m_Value: 8.543047
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -730,9 +730,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ba350000
-      m_LastClickedID: 13754
-      m_ExpandedIDs: 66fbffff
+      m_SelectedIDs: 0a360000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 24bcfeff7ce3feff4eeffeff30f0feff5af4feff00f6feff6cf7fefff4fbfeffb423ffff0e28ffffb44effffee64ffff0c6cffff0c6dfffff092ffff3c97ffff66bcffffaebdffff62c0ffffbac1ffff02c3ffff3ec4ffff54c4ffff6eebfffff4f6ffff66fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -784,7 +784,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 13754
+  m_LastSelectedObjectID: 60324
 --- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -824,20 +824,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scenes
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\sergi\Documents\GitHub\Project-Mimicry\Project Mimicry
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 62360000
-    m_LastClickedID: 13922
-    m_ExpandedIDs: 000000003a3600003c3600003e360000403600004236000000ca9a3b
+    m_SelectedIDs: 7c360000
+    m_LastClickedID: 13948
+    m_ExpandedIDs: 0000000076360000783600007a3600007c3600007e36000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -865,7 +865,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000003a3600003c3600003e360000403600004236000000ca9a3b
+    m_ExpandedIDs: 0000000076360000783600007a3600007c3600007e36000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
