@@ -1262,7 +1262,7 @@ MonoBehaviour:
     m_Bits: 11264
   interactRange: 1
   pushDistance: 1.5
-  lerpSpeed: 5
+  lerpSpeed: 7
 --- !u!1 &5307041613514364720
 GameObject:
   m_ObjectHideFlags: 0

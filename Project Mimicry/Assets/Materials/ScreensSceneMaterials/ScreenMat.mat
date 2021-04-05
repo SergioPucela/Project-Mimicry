@@ -60,9 +60,9 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Factor1: 1708
-    - _Factor2: 704
-    - _Factor3: 5683
+    - _Factor1: 1749
+    - _Factor2: 591
+    - _Factor3: 5063
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
