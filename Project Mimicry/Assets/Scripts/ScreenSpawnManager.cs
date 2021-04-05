@@ -4,19 +4,8 @@ using UnityEngine;
 
 public class ScreenSpawnManager : MonoBehaviour
 {
-    [SerializeField] List<GameObject> screens;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] List<GameObject> screens = new List<GameObject>();
+    [SerializeField] List<GameObject> screensToDisable = new List<GameObject>();
 
     private void OnTriggerEnter(Collider other)
     {
@@ -25,6 +14,14 @@ public class ScreenSpawnManager : MonoBehaviour
             foreach(GameObject GO in screens)
             {
                 StartCoroutine(spawnScreen(GO));
+            }
+
+            if(screensToDisable.Count > 0)
+            {
+                foreach (GameObject GO in screensToDisable)
+                {
+                    GO.SetActive(false);
+                }
             }
         }
     }
