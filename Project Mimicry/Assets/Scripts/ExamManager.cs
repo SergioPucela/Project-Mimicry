@@ -6,6 +6,10 @@ public class ExamManager : MonoBehaviour
 {
     [Header("Bots")]
     [SerializeField] bool isBot;
+    [SerializeField] float answerSpeed;
+
+    [Header("Sounds")]
+    [SerializeField] AudioSource audioSource;
 
     [Header("Lists")]
     [SerializeField] private List<GameObject> arrows = new List<GameObject>();
@@ -21,7 +25,7 @@ public class ExamManager : MonoBehaviour
     [SerializeField] GameObject exam;
 
     [Header("Light")]
-    [SerializeField] GameObject projectorLight;
+    [SerializeField] Light projectorLight;
 
     private int lastRandIndex = -1;
     private int currentQuestion = 0;
@@ -127,7 +131,7 @@ public class ExamManager : MonoBehaviour
         if (currentQuestion >= checkBox.Count)
             StartCoroutine("resetExam");
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(answerSpeed);
 
         StartCoroutine("randomAnswer");
     }
@@ -140,7 +144,9 @@ public class ExamManager : MonoBehaviour
         }
         currentQuestion = 0;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
+
+        audioSource.Play();
 
         foreach(Renderer CB in checkBox)
         {
@@ -148,13 +154,13 @@ public class ExamManager : MonoBehaviour
         }
         exam.SetActive(false);
         lastRandIndex = -1;
-        projectorLight.SetActive(false);
+        projectorLight.enabled = false;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
 
         exam.SetActive(true);
         examRunning = true;
-        projectorLight.SetActive(true);
+        projectorLight.enabled = true;
 
         nextQuestion(generateRandIndex());
     }
