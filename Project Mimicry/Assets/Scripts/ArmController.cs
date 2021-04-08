@@ -5,11 +5,13 @@ using UnityEngine;
 public class ArmController : MonoBehaviour
 {
 
-    Animator anim;
+    private Animator anim;
+
     [SerializeField] float clickRange;
     [SerializeField] GameObject prefabTest;
     [SerializeField] LayerMask layerMask;
-    [SerializeField] bool ending;
+
+    [HideInInspector] public int NumClicks = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -26,21 +28,14 @@ public class ArmController : MonoBehaviour
         transform.position = newPos;
 
         if (Input.GetButtonDown("Click")){
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (!ending)
+            if (Physics.Raycast(ray, out hit, layerMask))
             {
-                RaycastHit hit;
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                NumClicks++;
 
-                if (Physics.Raycast(ray, out hit, layerMask))
-                {
-                    Instantiate(prefabTest, hit.point, Quaternion.identity);
-                    anim.SetBool("click", true);
-                }
-            }
-            else
-            {
-                Instantiate(prefabTest, new Vector3(0f, 0f, 0f), Quaternion.identity);
+                Instantiate(prefabTest, hit.point, Quaternion.identity);
                 anim.SetBool("click", true);
             }
         }

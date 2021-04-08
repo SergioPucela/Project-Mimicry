@@ -6,28 +6,59 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] PlayerController playerControl;
+    [SerializeField] GameObject levelsShortcut;
 
     [SerializeField] List<LaserCube> winConditions = new List<LaserCube>();
     [SerializeField] List<LaserCube> loseConditions = new List<LaserCube>();
+
+    [SerializeField] Animator transitionAnim;
+
+    [Header("First Person Scenes ONLY")]
+    [SerializeField] bool firstPersonScene;
+
+    [HideInInspector] public bool startTransition;
 
     // Start is called before the first frame update
     void Awake()
     {
         if(playerControl != null) StartCoroutine("disablePlayerControl");
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R)) //Reload level
         {
             print("Reload level");
             reloadLevel();
         }
-        if (checkWinCons())
+        else if (Input.GetKeyDown(KeyCode.F) && levelsShortcut != null) //Display or hide the levels shortcuts
         {
-            print("YOU WIN!");
-            StartCoroutine("loadNextLevel");
+            if (levelsShortcut.activeSelf)
+            {
+                levelsShortcut.SetActive(false);
+                Cursor.visible = false;
+            }
+            else
+            {
+                levelsShortcut.SetActive(true);
+                Cursor.visible = true;
+            }
+        }
+
+        if (!firstPersonScene)
+        {
+            if (checkWinCons())
+            {
+                print("YOU WIN!");
+                StartCoroutine("loadNextLevel");
+            }
+        }
+        else if(startTransition)
+        {
+            instaLoadNextLevel();
+            startTransition = false;
         }
     }
 
@@ -55,10 +86,24 @@ public class GameManager : MonoBehaviour
         playerControl.enabled = true;
     }
 
+    private void instaLoadNextLevel()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 11)
+        {
+            print("GAME ENDED");
+            Application.Quit();
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
+
     private IEnumerator loadNextLevel()
     {
-        yield return new WaitForSeconds(1f);
-        if (SceneManager.GetActiveScene().buildIndex == 8)
+        transitionAnim.SetTrigger("endScene");
+        yield return new WaitForSeconds(2f);
+        if (SceneManager.GetActiveScene().buildIndex == 11)
         {
             print("GAME ENDED");
             Application.Quit();

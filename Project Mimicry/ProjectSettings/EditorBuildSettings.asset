@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/FlockingScene.unity
+    guid: 04bd255b873e46e428a118cf0d216589
+  - enabled: 1
     path: Assets/Scenes/Levels/Level1_1.unity
     guid: 466b31fc420434c4e88e7dccd966dfd1
   - enabled: 1
@@ -15,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level1_3.unity
     guid: fb84db963c231db4e83e1f0c266b6aa0
   - enabled: 1
+    path: Assets/Scenes/ExamProjectorScene.unity
+    guid: 4bdaeb5bc90f0c240a718147cfe24990
+  - enabled: 1
     path: Assets/Scenes/Levels/Level2_1.unity
     guid: cbbbfcf1f4623134b924309d301076ec
   - enabled: 1
@@ -23,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Level2_3.unity
     guid: 139dff0de863b824f856087615236d83
+  - enabled: 1
+    path: Assets/Scenes/ScreensScene.unity
+    guid: a2b7005840fe13540b1492e9b7c0d6f5
   - enabled: 1
     path: Assets/Scenes/Levels/Level3_1.unity
     guid: eaaefe7b00c449c438db2becd740804d

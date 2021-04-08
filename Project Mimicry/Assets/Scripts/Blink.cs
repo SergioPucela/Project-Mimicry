@@ -10,6 +10,8 @@ public class Blink : MonoBehaviour
 
     private bool alreadyBlinked;
 
+    [HideInInspector] public bool endScene;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !alreadyBlinked)
@@ -26,6 +28,9 @@ public class Blink : MonoBehaviour
         blackPanel.SetActive(true);
         characterDummy.SetActive(false);
         yield return new WaitForSeconds(0.2f);
-        blackPanel.SetActive(false);    
+        blackPanel.SetActive(false);
+
+        yield return new WaitForSeconds(2f);
+        endScene = true;
     }
 }

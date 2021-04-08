@@ -32,6 +32,8 @@ public class ExamManager : MonoBehaviour
 
     private bool examRunning = true;
 
+    [HideInInspector] public int NumExams = 0;
+
     // Start is called before the first frame update
     void Start()
     {      
@@ -138,6 +140,8 @@ public class ExamManager : MonoBehaviour
 
     private IEnumerator resetExam()
     {
+        NumExams++;
+
         foreach (GameObject GO in arrows)
         {
             if (!GO.activeSelf) GO.SetActive(true);

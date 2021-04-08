@@ -24,6 +24,7 @@ public class MouseLook : MonoBehaviour
     {
         canMove = playerBody != null;
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
