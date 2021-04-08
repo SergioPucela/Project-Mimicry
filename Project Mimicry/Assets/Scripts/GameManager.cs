@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         if(playerControl != null) StartCoroutine("disablePlayerControl");
+        if (!firstPersonScene) Cursor.lockState = CursorLockMode.None;
         Cursor.visible = false;
     }
 
