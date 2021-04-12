@@ -29,12 +29,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R)) //Reload level
-        {
-            print("Reload level");
-            reloadLevel();
-        }
-        else if (Input.GetKeyDown(KeyCode.F) && levelsShortcut != null) //Display or hide the levels shortcuts
+        if (Input.GetKeyDown(KeyCode.F) && levelsShortcut != null) //Display or hide the levels shortcuts
         {
             if (levelsShortcut.activeSelf)
             {
@@ -82,7 +77,7 @@ public class GameManager : MonoBehaviour
     {
         playerControl.enabled = false;
 
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(1f);
 
         playerControl.enabled = true;
     }
@@ -115,45 +110,49 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void reloadLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
     public void LoadLvl1()
     {
+        if (Time.timeScale == 0f) Time.timeScale = 1f;
         SceneManager.LoadScene("Level1_1");
     }
     public void LoadLvl2()
     {
+        if (Time.timeScale == 0f) Time.timeScale = 1f;
         SceneManager.LoadScene("Level1_2");
     }
     public void LoadLvl3()
     {
+        if (Time.timeScale == 0f) Time.timeScale = 1f;
         SceneManager.LoadScene("Level1_3");
     }
     public void LoadLvl4()
     {
+        if (Time.timeScale == 0f) Time.timeScale = 1f;
         SceneManager.LoadScene("Level2_1");
     }
     public void LoadLvl5()
     {
+        if (Time.timeScale == 0f) Time.timeScale = 1f;
         SceneManager.LoadScene("Level2_2");
     }
     public void LoadLvl6()
     {
+        if (Time.timeScale == 0f) Time.timeScale = 1f;
         SceneManager.LoadScene("Level2_3");
     }
     public void LoadLvl7()
     {
+        if (Time.timeScale == 0f) Time.timeScale = 1f;
         SceneManager.LoadScene("Level3_1");
     }
     public void LoadLvl8()
     {
+        if (Time.timeScale == 0f) Time.timeScale = 1f;
         SceneManager.LoadScene("Level3_2");
     }
     public void LoadLvl9()
     {
+        if (Time.timeScale == 0f) Time.timeScale = 1f;
         SceneManager.LoadScene("Level3_3");
     }
 }
