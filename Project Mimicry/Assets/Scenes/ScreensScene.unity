@@ -11395,7 +11395,7 @@ MonoBehaviour:
   playerBody: {fileID: 1419312197}
   xLockAngle: 60
   yLockAngle: 360
-  mouseSensitivity: 700
+  mouseSensitivity: 500
 --- !u!1 &1392632773
 GameObject:
   m_ObjectHideFlags: 0

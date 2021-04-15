@@ -25,7 +25,7 @@ public class FirstPersonMovement : MonoBehaviour
         x = Input.GetAxis("Horizontal");
         z = Input.GetAxis("Vertical");
 
-        move = transform.right * x + transform.forward * z;
+        move = transform.right * (x/2) + transform.forward * z; //Horizontal speed will be half of vertical speed
 
         controller.Move(move * speed * Time.deltaTime);
     }
