@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 3597a1d75090f9c489cc188d97442991
+  - enabled: 1
     path: Assets/Scenes/FlockingScene.unity
     guid: 04bd255b873e46e428a118cf0d216589
   - enabled: 1

@@ -8,8 +8,10 @@ public class ArmController : MonoBehaviour
     private Animator anim;
 
     [SerializeField] float clickRange;
-    [SerializeField] GameObject prefabTest;
+    [SerializeField] AudioSource tabSound;
     [SerializeField] LayerMask layerMask;
+
+    private FleeTrigger fleeTrigger;
 
     [HideInInspector] public int NumClicks = 0;
 
@@ -17,6 +19,7 @@ public class ArmController : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        fleeTrigger = tabSound.gameObject.GetComponent<FleeTrigger>();
         Cursor.visible = false;
     }
 
@@ -35,7 +38,9 @@ public class ArmController : MonoBehaviour
             {
                 NumClicks++;
 
-                Instantiate(prefabTest, hit.point, Quaternion.identity);
+                tabSound.gameObject.transform.position = new Vector3(hit.point.x, 2.25f, -7.35f);
+                tabSound.Play();
+                fleeTrigger.StartFlee();
                 anim.SetBool("click", true);
             }
         }
