@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
 
     private void instaLoadNextLevel()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 11)
+        if (SceneManager.GetActiveScene().buildIndex == 12)
         {
             print("GAME ENDED");
             Application.Quit();
@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
     {
         transitionAnim.SetTrigger("endScene");
         yield return new WaitForSeconds(2f);
-        if (SceneManager.GetActiveScene().buildIndex == 11)
+        if (SceneManager.GetActiveScene().buildIndex == 12)
         {
             print("GAME ENDED");
             Application.Quit();
