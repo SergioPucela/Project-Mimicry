@@ -34,6 +34,8 @@ public class FleeTrigger : MonoBehaviour
             StartCoroutine(flee(fish));
             fish.fleeBehaviour(this);
         }
+
+        fishesInRange.Clear();
     }
 
     private void OnDrawGizmos()

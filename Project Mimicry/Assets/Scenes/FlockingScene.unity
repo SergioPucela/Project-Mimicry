@@ -857,7 +857,7 @@ MonoBehaviour:
     type: 3}
   numFish: 25
   allFishes: []
-  swimLimits: {x: 2.25, y: 0.85, z: 0.5}
+  swimLimits: {x: 2.2, y: 0.8, z: 0.45}
   goalPos: {x: 0, y: 0, z: 0}
   minSpeed: 0.35
   maxSpeed: 1.75
@@ -1756,6 +1756,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5550443656812131893, guid: 160615c3aa53a1a4792f44c579e436fb,
+        type: 3}
+      propertyPath: MinDistance
+      value: 0.7848706
+      objectReference: {fileID: 0}
     - target: {fileID: 6291025122603098573, guid: 160615c3aa53a1a4792f44c579e436fb,
         type: 3}
       propertyPath: m_RootOrder
@@ -1816,19 +1821,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: FleeSpawn
       objectReference: {fileID: 0}
-    - target: {fileID: 6484244074685298392, guid: 160615c3aa53a1a4792f44c579e436fb,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8213916313644415086, guid: 160615c3aa53a1a4792f44c579e436fb,
-        type: 3}
-      propertyPath: influenceRadius
-      value: 0.8
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2344348187496051592, guid: 160615c3aa53a1a4792f44c579e436fb, type: 3}
-    - {fileID: 8383618315209720255, guid: 160615c3aa53a1a4792f44c579e436fb, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 160615c3aa53a1a4792f44c579e436fb, type: 3}
 --- !u!82 &5751116882530280891 stripped
 AudioSource:
