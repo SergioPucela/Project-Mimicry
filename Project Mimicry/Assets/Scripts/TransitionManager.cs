@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class TransitionManager : MonoBehaviour
 {
@@ -16,9 +17,13 @@ public class TransitionManager : MonoBehaviour
     [Header("Screens Scene")]
     [SerializeField] Blink screen;
 
+    [Header("Mentor Scene")]
+    [SerializeField] VideoPlayer video;
+
     private bool isFlockingScene;
     private bool isExamScene;
     private bool isScreenScene;
+    private bool isMentorScene;
 
     private float seconds = 0f;
 
@@ -28,6 +33,9 @@ public class TransitionManager : MonoBehaviour
         isFlockingScene = arm != null;
         isExamScene = exam != null;
         isScreenScene = screen != null;
+        isMentorScene = video != null;
+
+        if (isMentorScene) countdown = (float)video.length - 2f; // -2f because of the FadeIn animation duration
     }
 
     // Update is called once per frame
@@ -35,12 +43,20 @@ public class TransitionManager : MonoBehaviour
     {
         seconds += Time.deltaTime;
 
-        if (isFlockingScene) 
+        if (isFlockingScene)
             checkArmClicks();
         else if (isExamScene)
             checkExamDuration();
-        else if (isScreenScene) 
+        else if (isScreenScene)
             checkScreenEnd();
+        else if (isMentorScene)
+            checkCountdown();
+    }
+
+    private void checkCountdown()
+    {
+        if (seconds >= countdown)
+            GM.startTransition = true;
     }
 
     private void checkArmClicks()

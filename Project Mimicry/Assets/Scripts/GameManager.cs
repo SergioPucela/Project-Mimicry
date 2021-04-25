@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
     [Header("First Person Scenes ONLY")]
     [SerializeField] bool firstPersonScene;
 
+    [Header("Mentor Scenes ONLY")]
+    [SerializeField] bool mentorScene;
+
     [HideInInspector] public bool startTransition;
 
     // Start is called before the first frame update
@@ -43,7 +46,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (!firstPersonScene)
+        if (!firstPersonScene && !mentorScene)
         {
             if (checkWinCons())
             {
@@ -53,7 +56,10 @@ public class GameManager : MonoBehaviour
         }
         else if(startTransition)
         {
-            instaLoadNextLevel();
+            if (mentorScene)
+                StartCoroutine("loadNextLevel");
+            else
+                instaLoadNextLevel();
             startTransition = false;
         }
     }
@@ -84,7 +90,7 @@ public class GameManager : MonoBehaviour
 
     private void instaLoadNextLevel()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 12)
+        if (SceneManager.GetActiveScene().buildIndex == 21)
         {
             print("GAME ENDED");
             Application.Quit();
@@ -99,7 +105,7 @@ public class GameManager : MonoBehaviour
     {
         transitionAnim.SetTrigger("endScene");
         yield return new WaitForSeconds(2f);
-        if (SceneManager.GetActiveScene().buildIndex == 12)
+        if (SceneManager.GetActiveScene().buildIndex == 21)
         {
             print("GAME ENDED");
             Application.Quit();
