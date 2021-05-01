@@ -301,6 +301,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1028307722, guid: 137a5c9e6ea3f0244ac4d00fbfa6ee71, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1063722941, guid: 137a5c9e6ea3f0244ac4d00fbfa6ee71, type: 3}
       propertyPath: m_Text
       value: 
@@ -1950,6 +1954,12 @@ PrefabInstance:
       propertyPath: MinDistance
       value: 0.7848706
       objectReference: {fileID: 0}
+    - target: {fileID: 5550443656812131893, guid: 160615c3aa53a1a4792f44c579e436fb,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: c726df0614ffaaf468ac6893861e9c94,
+        type: 2}
     - target: {fileID: 6291025122603098573, guid: 160615c3aa53a1a4792f44c579e436fb,
         type: 3}
       propertyPath: m_RootOrder
