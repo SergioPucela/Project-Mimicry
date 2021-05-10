@@ -105,10 +105,10 @@ public class GameManager : MonoBehaviour
     {
         transitionAnim.SetTrigger("endScene");
         yield return new WaitForSeconds(2f);
-        if (SceneManager.GetActiveScene().buildIndex == 21)
+        if (SceneManager.GetActiveScene().buildIndex == 22)
         {
-            print("GAME ENDED");
-            Application.Quit();
+            print("GAME FINISHED");
+            SceneManager.LoadScene("MainMenu");
         }
         else
         {

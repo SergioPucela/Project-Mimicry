@@ -6405,10 +6405,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4696409992458835625, guid: 1bf62afcf07ed9748bea3e18d7de4ff7,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 42e59fa731151214d8b50b864c873f2c, type: 3}
     - target: {fileID: 4696409992458835626, guid: 1bf62afcf07ed9748bea3e18d7de4ff7,
         type: 3}
       propertyPath: m_Name
       value: BGMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696409992458835626, guid: 1bf62afcf07ed9748bea3e18d7de4ff7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bf62afcf07ed9748bea3e18d7de4ff7, type: 3}

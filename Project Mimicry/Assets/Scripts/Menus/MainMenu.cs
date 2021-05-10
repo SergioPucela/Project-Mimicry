@@ -7,6 +7,15 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] Animator anim;
 
+    private void Awake()
+    {
+        if (Cursor.lockState == CursorLockMode.Locked)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
+
     public void StartGame()
     {
         anim.SetTrigger("endScene");

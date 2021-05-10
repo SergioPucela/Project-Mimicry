@@ -11,6 +11,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject pausePanel;
     [SerializeField] Animator anim;
 
+    [SerializeField] ArmController arm;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !quitting)
@@ -29,6 +31,18 @@ public class PauseMenu : MonoBehaviour
     public void ResumeGame()
     {
         isPaused = false;
+
+        if (Cursor.lockState == CursorLockMode.None)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        if (arm != null)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            arm.enabled = true;
+        }
+
         Cursor.visible = false;
         pausePanel.SetActive(false);
         Time.timeScale = 1f;
@@ -37,6 +51,14 @@ public class PauseMenu : MonoBehaviour
     public void PauseGame()
     {
         isPaused = true;
+
+        if (Cursor.lockState == CursorLockMode.Locked)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+
+        if (arm != null) arm.enabled = false;
+
         Cursor.visible = true;
         pausePanel.SetActive(true);
         Time.timeScale = 0f;
