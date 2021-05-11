@@ -63,7 +63,7 @@ public class PushController : MonoBehaviour
 
                 directionToPush = -hit.normal;
 
-                if (Physics.OverlapSphere(directionToPush * pushDistance + cubeToPushPos, 0.5f, obstaclesLayerMask).Length == 0) //No hay nada detrás del PushableObject que me impida empujarlo?
+                if (Physics.OverlapSphere(directionToPush * pushDistance + cubeToPushPos, 0.65f, obstaclesLayerMask).Length == 0) //No hay nada detrás del PushableObject que me impida empujarlo?
                 {
                     playerControl.animatorSpeed = 0f;
                     playerControl.moveSpeed = 0f;
