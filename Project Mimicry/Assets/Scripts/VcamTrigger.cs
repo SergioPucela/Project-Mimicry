@@ -9,15 +9,15 @@ public class VcamTrigger : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera vcamPrior;
     [SerializeField] List<CinemachineVirtualCamera> vcamsNonPrior = new List<CinemachineVirtualCamera>();
 
-    private bool isButtonDown;
+    private bool isTriggerActive;
 
     private void Update()
     {
-        if (isButtonDown)
+        if (isTriggerActive)
         {
-            if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+            if(!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.D))
             {
-                isButtonDown = false;
+                isTriggerActive = false;
                 player.calculateInputFromCamera();
             }
         }
@@ -25,7 +25,7 @@ public class VcamTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        isButtonDown = true;
+        isTriggerActive = true;
 
         if (other.CompareTag("Player"))
         {

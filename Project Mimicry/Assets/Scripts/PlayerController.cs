@@ -78,6 +78,13 @@ public class PlayerController : MonoBehaviour
 
     public void calculateInputFromCamera()
     {
+        StartCoroutine("delayCalculation");
+    }
+
+    private IEnumerator delayCalculation()
+    {
+        yield return new WaitForEndOfFrame();
+
         forward = Camera.main.transform.forward;
         forward.y = 0;
         forward = Vector3.Normalize(forward);
